@@ -27,8 +27,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// Explicitly handle preflight requests
-app.options('*', cors(corsOptions));
+// Preflight will be handled automatically by cors middleware
 
 mongoose.connect(URI)
    .then(()=>{
