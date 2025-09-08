@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './CreateNote.module.css';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateNote({ onNoteCreated }) {
@@ -22,7 +23,7 @@ export default function CreateNote({ onNoteCreated }) {
     setLoading(true);
     try {
       const token = JSON.parse(localStorage.getItem("userData"))?.token;
-      const res = await axios.post('http://localhost:8080/createNote', { title, content }, {
+      const res = await axios.post(`${API_URL}/createNote`, { title, content }, {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"

@@ -5,6 +5,9 @@ import { getBook,createBook } from '../controllers/bookController.mjs';
 import { createNote, deleteNote, getNotes, updateNote } from '../controllers/notesController.mjs';
 
 const router = express.Router();
+router.get('/',(req,res) => {
+    res.send("API is running...");
+})
 router.post('/register',registerUser);
 router.post('/login',loginUser);
 router.get('/profile/:id',authentication,authorization,getProfile);

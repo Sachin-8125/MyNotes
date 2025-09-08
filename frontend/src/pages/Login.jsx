@@ -3,6 +3,7 @@ import styles from './Login.module.css'
 import CustomButton from '../components/CustomButton'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Login() {
   let navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Login() {
     }
     setErr("");
     try {
-      let res = await axios.post("http://localhost:8080/login",{email,password},{
+  let res = await axios.post(`${API_URL}/login`,{email,password},{
         headers:{
           "Content-Type": "application/json"  
         }

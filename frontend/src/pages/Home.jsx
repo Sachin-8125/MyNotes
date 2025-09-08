@@ -5,6 +5,7 @@ import styles from './Home.module.css'
 import LeftNav from '../components/LeftNav'
 import RightNav from '../components/RightNav'
 import axios from 'axios'
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Home() {
   let navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function Home() {
   const fetchNotes = async () => {
     try {
       const token = JSON.parse(localStorage.getItem("userData"))?.token;
-      const response = await axios.get('http://localhost:8080/notes', {
+      const response = await axios.get(`${API_URL}/notes`, {
         headers: {
           "Authorization": `Bearer ${token}`
         }

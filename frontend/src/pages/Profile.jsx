@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Profile.module.css'
 import axios from 'axios'
+const API_URL = import.meta.env.VITE_API_URL;
 import CustomButton from '../components/CustomButton';
 import NavBar from '../components/Navigation';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +25,7 @@ export default function Profile() {
       return;
     }
     try {
-      let res = await axios.get(`http://localhost:8080/profile/${id}`,
+  let res = await axios.get(`${API_URL}/profile/${id}`,
         {
           headers: {
             "Content-Type": "application/json",
