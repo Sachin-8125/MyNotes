@@ -1,0 +1,26 @@
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin: 2rem;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.title {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+.content {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+.placeholder {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

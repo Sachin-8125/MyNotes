@@ -1,0 +1,11 @@
+.defaultStyle{
+    padding:10px 20px;
+    background-color:rgb(50, 41, 41);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+}
